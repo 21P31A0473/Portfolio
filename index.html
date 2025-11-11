@@ -16,11 +16,9 @@
       background-color: #ffffff;
       color: #374151;
     }
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
-    /* Gradient buttons */
+    /* Buttons */
     .gradient-btn {
       background: linear-gradient(90deg, #3B82F6, #60A5FA);
       transition: all 0.3s ease;
@@ -32,13 +30,23 @@
       transform: translateY(-3px) scale(1.05);
     }
 
-    /* Fade-up animation */
+    /* Fade Animation */
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .animate-fade-up {
       animation: fade-up 0.8s ease-out forwards;
+    }
+
+    /* Back-to-top */
+    #backToTop {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    #backToTop.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
     }
   </style>
 </head>
@@ -86,8 +94,8 @@
     <div class="container mx-auto px-4 max-w-4xl text-center">
       <h2 class="text-3xl font-bold text-blue-600 mb-6">About Me</h2>
       <p class="text-lg leading-relaxed text-gray-700">
-        A passionate and creative UI/UX Designer with a focus on crafting user-centered, visually appealing, and responsive digital experiences. 
-        I aim to solve real-world problems through thoughtful design systems, collaboration, and empathy-driven solutions.
+        A passionate and creative UI/UX Designer focused on crafting user-centered, visually appealing, and responsive digital experiences.
+        I aim to solve real-world problems through design thinking, collaboration, and empathy-driven solutions that deliver impact.
       </p>
     </div>
   </section>
@@ -121,19 +129,88 @@
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-blue-600 mb-8">Technical Skills</h2>
       <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Figma</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Wireframing</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Prototyping</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Auto Layout</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Components</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Design System</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Variants</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Smart Animate</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">FigJam Collaboration</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Responsive Design</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Developer Handoff</span>
-        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Collaborative Design</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Figma</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Wireframing</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Prototyping</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Auto Layout</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Components</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Design System</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Variants</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Smart Animate</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">FigJam Collaboration</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Responsive Design</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Developer Handoff</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Collaborative Design</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">HTML</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">CSS</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">Python</span>
       </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-blue-600 mb-8">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg text-left">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Thinu Thinipinchu (Food Ordering App)</h3>
+          <p>Designed a modern food ordering app in Figma with micro-interactions, seamless cart flow, and a vibrant red-orange theme for an enjoyable UX.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg text-left">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Assistive IoT Solution with TTS</h3>
+          <p>Developed an IoT-based assistive alert system using Raspberry Pi with voice output, improving accessibility and automation efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internships -->
+  <section id="internships" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-blue-600 mb-8">Internships</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-lg font-semibold text-blue-600 mb-1">Python Programming - Technical Hub</h3>
+          <p>Completed IT Specialist Certification in Python, gaining hands-on coding and problem-solving experience.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-lg font-semibold text-blue-600 mb-1">Embedded Systems - Skill Dzire</h3>
+          <p>Worked on microcontroller programming and embedded design with real-world project exposure.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-lg font-semibold text-blue-600 mb-1">ZF Rane Automotive Pvt Ltd</h3>
+          <p>Hands-on industrial exposure on automotive components and seatbelt mechanisms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-blue-600 mb-8">Certifications</h2>
+      <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">IT Specialist - Python</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Introduction to HTML - Simplilearn</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">UI/UX for Beginners - Simplilearn</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Embedded Systems - Skill Dzire</span>
+        <span class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium">Intro to Figma - Simplilearn</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-blue-600 mb-8">Contact</h2>
+      <p class="mb-6 text-gray-700">Let’s connect and create something amazing together!</p>
+      <div class="flex justify-center gap-6 mb-6">
+        <a href="mailto:vimalaberi890@gmail.com" class="text-blue-600 hover:text-blue-400"><i class="fa-solid fa-envelope fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/vimala-beri-a28638266" target="_blank" class="text-blue-600 hover:text-blue-400"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.figma.com/design/P4cdQh7mEPS9gYjSxqET9J/WORK?node-id=0-1&t=c9DetwMvcrNxLdAq-1" target="_blank" class="text-blue-600 hover:text-blue-400"><i class="fa-brands fa-figma fa-2x"></i></a>
+      </div>
+      <p class="text-gray-600">📧 vimalaberi890@gmail.com</p>
     </div>
   </section>
 
@@ -141,5 +218,24 @@
   <footer class="bg-gray-100 text-gray-600 py-4 text-center border-t">
     <p>© 2025 Beri Vimala | UI/UX Designer</p>
   </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-500 transition hidden">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('hidden');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
